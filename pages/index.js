@@ -1,12 +1,13 @@
-import Head from "next/head";
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import Navigation from "./Navigation";
+import React, { useEffect } from "react";
+import Navigation from "./Main/Navigation";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
-export default function Home() {
+
+const index = () => {
   return (
-    <>
+    <div>
       <Navigation />
-    </>
+    </div>
   );
-}
+};
+
+export default index;

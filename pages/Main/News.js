@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 
 const News = ({ query, date }) => {
-  // console.log(date);
   const pageSize = 10; // number of items to display per page
 
   let url = `https://newsapi.org/v2/everything?q=${query}&from=${date}&sortBy=popularity&apiKey=edf744321191485e9a67684b9d537d6b`;

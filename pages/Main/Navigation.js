@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
+import { Typeahead } from "react-bootstrap-typeahead";
 import { debounce } from "lodash";
+import "react-bootstrap-typeahead/css/Typeahead.css";
+import News from "./News";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import News from "./News";
 
 const Navigation = () => {
   //category
@@ -111,7 +113,7 @@ const Navigation = () => {
           className="form-control mr-sm-2"
         />
         <Button
-          variant="outline-light"
+          variant="outline-dark"
           onClick={() => setPick(date.toISOString())}
           disabled={!date}
         >
