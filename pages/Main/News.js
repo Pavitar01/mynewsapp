@@ -4,8 +4,7 @@ import { Button } from "react-bootstrap";
 
 const News = ({ query, date }) => {
   const pageSize = 10; // number of items to display per page
-
-  let url = `https://newsapi.org/v2/everything?q=${query}&from=${date}&sortBy=popularity&apiKey=edf744321191485e9a67684b9d537d6b`;
+  let url = `https://gnews.io/api/v4/search?q=${query}&from=${date}&apikey=28fd54deb39d195cf8e3fd1413cad2d4`;
   // console.log(query);
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -72,7 +71,7 @@ const News = ({ query, date }) => {
               </div>
               <img
                 className="card-img-top col-md-4"
-                src={item.urlToImage}
+                src={item.image}
                 alt="No image"
               />
             </div>
@@ -93,7 +92,7 @@ const News = ({ query, date }) => {
                     }`}
                   >
                     <Button
-                      variant="outline-light"
+                      variant="outline-dark"
                       onClick={() => pagechnge(index + 1)}
                     >
                       {index + 1}
