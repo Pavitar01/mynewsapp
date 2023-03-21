@@ -103,7 +103,7 @@ const Navigation = () => {
         </Navbar.Collapse>
       </Navbar>
 
-      <div className="d-flex align-items-center col-md-3 ml-auto">
+      {/* <div className="d-flex align-items-center col-md-3 ml-auto">
         <DatePicker
           selected={date}
           onChange={(e) => setDate(e)}
@@ -118,7 +118,7 @@ const Navigation = () => {
         >
           Pick
         </Button>
-      </div>
+      </div> */}
 
       <News query={inp} date={pick} />
     </>

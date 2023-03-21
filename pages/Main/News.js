@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 
 const News = ({ query, date }) => {
-  const pageSize = 10; // number of items to display per page
+  const pageSize = 5; // number of items to display per page
   let url = `https://gnews.io/api/v4/search?q=${query}&from=${date}&apikey=28fd54deb39d195cf8e3fd1413cad2d4`;
   // console.log(query);
   const [news, setNews] = useState([]);
