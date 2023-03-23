@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import Image from "next/image";
 
 const News = ({ query, date }) => {
   const pageSize = 5; // number of items to display per page
   let url = `https://gnews.io/api/v4/search?q=${query}&from=${date}&apikey=28fd54deb39d195cf8e3fd1413cad2d4`;
-  // console.log(query);
+
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -13,7 +14,6 @@ const News = ({ query, date }) => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res.data.articles);
         setNews(res.data.articles);
       })
       .catch((err) => {
@@ -33,8 +33,6 @@ const News = ({ query, date }) => {
 
   return (
     <>
-      {/* <Navigation /> */}
-
       <div className="container">
         <h1 className="text-capitalize mt-2" style={{ fontSize: "20px" }}>
           :- {query}&nbsp; News
@@ -49,7 +47,6 @@ const News = ({ query, date }) => {
                 <h5 className="card-title">{item.title}</h5>
 
                 <p
-                  // maxLength="10"
                   style={{
                     display: "block",
                     width: "81px",
@@ -69,11 +66,14 @@ const News = ({ query, date }) => {
                   Read More
                 </a>
               </div>
-              <img
-                className="card-img-top col-md-4"
-                src={item.image}
-                alt="No image"
-              />
+              <div className="col-md-4">
+                <Image
+                  src={item.image}
+                  alt="No image"
+                  width={500}
+                  height={300}
+                />
+              </div>
             </div>
           );
         })}
