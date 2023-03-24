@@ -67,12 +67,7 @@ const News = ({ query, date }) => {
                 </a>
               </div>
               <div className="col-md-4">
-                <Image
-                  src={item.image}
-                  alt="No image"
-                  width={500}
-                  height={300}
-                />
+                <img src={item.image} alt="No image" width={400} height={250} />
               </div>
             </div>
           );
